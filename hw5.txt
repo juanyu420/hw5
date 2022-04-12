@@ -1,0 +1,63 @@
+Console.WriteLine("請問閣下大名?");
+string name = Console.ReadLine();
+Console.WriteLine("請問閣下為1.男性 2.女性?");
+string gender =Console.ReadLine();
+Console.WriteLine("請問閣下生辰?");
+string birth = Console.ReadLine();
+Console.WriteLine("請問閣下學號?");
+string ID = Console.ReadLine();
+end:
+Console.WriteLine("===========================");
+
+
+Console.WriteLine("姓名:"+name);
+Console.WriteLine("性別:"+gender);
+Console.WriteLine("生日:"+birth);
+Console.WriteLine("學號:"+ID);
+Console.WriteLine("===========================");
+choose:
+Console.WriteLine("請問以上資訊是否正確? \n正確請輸入1 重新填寫請輸入2");
+string ? inum = (Console.ReadLine());
+if(inum=="1")
+{
+    Console.WriteLine("已完成資料建設 :D");
+}
+else if(inum=="2")
+{
+    Console.WriteLine("請重新開始詢問基本資料填寫 :)");
+    rewrite:
+    Console.WriteLine("請選擇欲重新填寫的資料 \n1.姓名 2.性別 3.生日 4.學號" );
+    string ? bnum = (Console.ReadLine());
+    switch(bnum)
+    {
+        case"1":
+            Console.WriteLine("請問閣下大名?");
+            name = Console.ReadLine();
+            goto end;
+            break;
+        case"2":
+            Console.WriteLine("請問閣下為1.男性 2.女性?");
+            gender = Console.ReadLine();
+            goto end;
+            break;
+        case"3":
+            Console.WriteLine("請問閣下生辰?");
+            birth = Console.ReadLine();
+            goto end;
+            break;
+        case"4":
+            Console.WriteLine("請問閣下學號?");
+            ID = Console.ReadLine();
+            goto end;
+            break;
+        default:
+            Console.WriteLine("錯誤 ):");
+            goto rewrite;
+            break;
+    }
+}
+else
+{
+     Console.WriteLine("錯誤 :(");
+     goto choose;
+}
